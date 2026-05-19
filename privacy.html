@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — NOTA</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    header {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+    header p  { font-size: 14px; color: #aaa; margin-top: 6px; }
+    main {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 0 24px 80px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 36px 0 10px;
+      color: #111;
+      border-left: 3px solid #4A6741;
+      padding-left: 12px;
+    }
+    p  { margin-bottom: 14px; font-size: 15px; color: #333; }
+    ul { margin: 0 0 14px 20px; }
+    li { font-size: 15px; color: #333; margin-bottom: 6px; }
+    a  { color: #4A6741; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e5e0;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .card-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .card-sub   { font-size: 13px; color: #666; }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      padding: 32px 24px;
+      border-top: 1px solid #e5e5e0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>NOTA — Privacy Policy</h1>
+  <p>Last updated: May 19, 2026</p>
+</header>
+
+<main>
+
+  <p>
+    This Privacy Policy explains how NOTA ("we", "us", or "our") collects, uses, and protects
+    your personal information when you use the NOTA mobile application ("App").
+    By using the App, you agree to this policy.
+  </p>
+
+  <h2>1. Who We Are</h2>
+  <p>
+    NOTA is operated by <strong>Hlib Ladin</strong>, an individual developer based in
+    Calgary, Alberta, Canada. You can contact us at
+    <a href="mailto:bbs7755@gmail.com">bbs7755@gmail.com</a>.
+  </p>
+
+  <h2>2. Information We Collect</h2>
+
+  <p><strong>Information you provide directly:</strong></p>
+  <ul>
+    <li>Account information: email address, display name</li>
+    <li>Tasks, notes, habits, and journal entries you create</li>
+    <li>Financial data: budget categories, manual transactions you enter</li>
+    <li>Mood and productivity scores you log</li>
+    <li>Bank account connections (via Plaid — see Section 5)</li>
+  </ul>
+
+  <p><strong>Information collected automatically:</strong></p>
+  <ul>
+    <li>App usage data (features accessed, session duration)</li>
+    <li>Device information (operating system, device type)</li>
+    <li>Crash reports and error logs</li>
+    <li>Subscription and purchase status (via RevenueCat)</li>
+  </ul>
+
+  <h2>3. How We Use Your Information</h2>
+  <ul>
+    <li>To provide and operate the App and its features</li>
+    <li>To sync your data across devices via Supabase cloud storage</li>
+    <li>To power AI features (task suggestions, focus debrief, AI chat)</li>
+    <li>To process in-app subscriptions and restore purchases</li>
+    <li>To automatically import and categorize bank transactions (if you connect your bank)</li>
+    <li>To send you habit reminders and notifications you have enabled</li>
+    <li>To improve the App and fix bugs</li>
+  </ul>
+
+  <h2>4. Data Storage and Security</h2>
+  <p>
+    Your data is stored securely on <strong>Supabase</strong> servers using row-level security (RLS),
+    meaning only your account can access your data. Data is encrypted in transit (TLS) and at rest.
+    We do not sell your personal data to third parties.
+  </p>
+
+  <h2>5. Bank Connection (Plaid)</h2>
+  <p>
+    If you choose to connect your bank account, we use <strong>Plaid Technologies, Inc.</strong>
+    to securely link your account. Plaid acts as an intermediary — your bank credentials are
+    entered directly on Plaid's interface and <strong>never stored on our servers</strong>.
+    We only receive transaction data and account balances from Plaid, which is displayed in
+    your personal budget dashboard and is never shared with third parties.
+  </p>
+  <p>
+    Plaid's privacy policy is available at
+    <a href="https://plaid.com/legal/privacy-notice/" target="_blank">plaid.com/legal/privacy-notice</a>.
+  </p>
+
+  <h2>6. AI Features (Anthropic)</h2>
+  <p>
+    AI-powered features (AI Chat, Focus Debrief, task suggestions) are powered by
+    <strong>Anthropic's Claude API</strong>. When you use these features, relevant context
+    (such as your task list or focus session notes) is sent to Anthropic's servers to generate
+    a response. This data is used solely to generate the response and is subject to
+    <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic's Privacy Policy</a>.
+    We do not use your data to train AI models.
+  </p>
+
+  <h2>7. Subscriptions (RevenueCat)</h2>
+  <p>
+    In-app subscription management is handled by <strong>RevenueCat, Inc.</strong>
+    RevenueCat processes purchase receipts to verify and manage your subscription status.
+    No financial payment data (credit card numbers, etc.) is processed by us — all payments
+    go through the Apple App Store or Google Play.
+    RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>.
+  </p>
+
+  <h2>8. Third-Party Services Summary</h2>
+
+  <div class="card">
+    <div class="card-title">Supabase</div>
+    <div class="card-sub">Database &amp; authentication — supabase.com/privacy</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Plaid</div>
+    <div class="card-sub">Bank connection — plaid.com/legal/privacy-notice</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Anthropic</div>
+    <div class="card-sub">AI features — anthropic.com/legal/privacy</div>
+  </div>
+  <div class="card">
+    <div class="card-title">RevenueCat</div>
+    <div class="card-sub">Subscriptions — revenuecat.com/privacy</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Expo / React Native</div>
+    <div class="card-sub">Push notifications — expo.dev/privacy</div>
+  </div>
+
+  <h2>9. Data Retention</h2>
+  <p>
+    We retain your data for as long as your account is active. You can delete all your data
+    at any time from <strong>Settings → Data &amp; Export → Delete All Data</strong> within the App.
+    Account deletion removes all personal data from our servers within 30 days.
+  </p>
+
+  <h2>10. Your Rights</h2>
+  <p>Depending on your location, you may have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> the personal data we hold about you</li>
+    <li><strong>Correct</strong> inaccurate data</li>
+    <li><strong>Delete</strong> your data (via in-app settings or by contacting us)</li>
+    <li><strong>Export</strong> your data (via Settings → Data &amp; Export)</li>
+    <li><strong>Withdraw consent</strong> at any time (by deleting your account)</li>
+  </ul>
+  <p>
+    Canadian users are protected under <strong>PIPEDA</strong>.
+    EU/EEA users are protected under the <strong>GDPR</strong>.
+    California users are protected under the <strong>CCPA</strong>.
+    To exercise any of these rights, contact us at
+    <a href="mailto:bbs7755@gmail.com">bbs7755@gmail.com</a>.
+  </p>
+
+  <h2>11. Children's Privacy</h2>
+  <p>
+    NOTA is not directed at children under 13 (or under 16 in the EU).
+    We do not knowingly collect personal information from children.
+    If you believe a child has provided us with personal information, please contact us
+    and we will delete it promptly.
+  </p>
+
+  <h2>12. Changes to This Policy</h2>
+  <p>
+    We may update this Privacy Policy from time to time. We will notify you of significant
+    changes by updating the date at the top of this page. Continued use of the App after
+    changes constitutes acceptance of the updated policy.
+  </p>
+
+  <h2>13. Contact</h2>
+  <p>
+    If you have questions about this Privacy Policy or your personal data, contact us at:<br />
+    <strong>Hlib Ladin</strong><br />
+    Calgary, Alberta, Canada<br />
+    <a href="mailto:bbs7755@gmail.com">bbs7755@gmail.com</a>
+  </p>
+
+</main>
+
+<footer>
+  &copy; 2026 NOTA · Hlib Ladin · Calgary, Canada
+</footer>
+
+</body>
+</html>
