@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    @page { margin: 48px 56px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+      font-size: 13px;
+    }
+    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 4px; }
+    .sub { font-size: 12px; color: #666; margin-bottom: 24px; }
+    h2 {
+      font-size: 15px; font-weight: 700; margin: 22px 0 8px; color: #111;
+      border-left: 3px solid #4A6741; padding-left: 10px;
+    }
+    p { margin-bottom: 10px; color: #333; }
+    ul { margin: 0 0 10px 20px; }
+    li { margin-bottom: 5px; color: #333; }
+    a { color: #4A6741; text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; }
+    th, td { border: 1px solid #ddd; padding: 7px 10px; text-align: left; font-size: 12.5px; vertical-align: top; }
+    th { background: #f3f3f0; font-weight: 700; }
+    .footer { margin-top: 28px; font-size: 11px; color: #888; border-top: 1px solid #e5e5e0; padding-top: 12px; }
+  </style>
+</head>
+<body>
+  <h1>NOTA — Data Retention and Deletion Policy</h1>
+  <div class="sub">Last updated: June 16, 2026 · Owner: Hlib Ladin · Calgary, Alberta, Canada · bbs7755@gmail.com</div>
+
+  <h2>1. Purpose and Scope</h2>
+  <p>
+    This policy defines how NOTA ("we", "us", or "our") retains and deletes consumer personal data,
+    including financial data accessed through Plaid. It applies to all consumer data collected and
+    processed by the NOTA mobile application and its backend. The policy is designed to comply with
+    applicable data privacy laws, including PIPEDA (Canada), GDPR (EU/EEA), and CCPA (California).
+  </p>
+
+  <h2>2. Principles</h2>
+  <ul>
+    <li><strong>Data minimization:</strong> We collect and retain only the data necessary to provide
+      the application's features.</li>
+    <li><strong>Purpose limitation:</strong> Data is retained only for as long as it is needed for
+      the purpose for which it was collected, or as required by law.</li>
+    <li><strong>User control:</strong> Users can review, export, and delete their data at any time.</li>
+  </ul>
+
+  <h2>3. Retention Periods</h2>
+  <table>
+    <tr><th>Data category</th><th>Retention</th></tr>
+    <tr><td>Account data (email, display name)</td><td>Retained while the account is active; deleted on account deletion.</td></tr>
+    <tr><td>User-generated content (tasks, notes, habits, budgets)</td><td>Retained while the account is active; deleted on account deletion.</td></tr>
+    <tr><td>Financial data imported via Plaid (transactions, balances)</td><td>Retained only while the bank connection is active. Deleted when the user disconnects the bank or deletes the account.</td></tr>
+    <tr><td>Plaid access tokens</td><td>Deleted immediately when the user disconnects the bank or deletes the account.</td></tr>
+    <tr><td>Crash logs / diagnostic data</td><td>Retained for a limited period for debugging, then automatically expired.</td></tr>
+  </table>
+
+  <h2>4. Deletion Mechanisms</h2>
+  <ul>
+    <li><strong>In-app deletion:</strong> Users can delete all their data at any time from
+      <strong>Settings &rarr; Data &amp; Export &rarr; Delete All Data</strong>.</li>
+    <li><strong>Bank disconnection:</strong> Disconnecting a linked bank removes the associated Plaid
+      access token and imported financial data.</li>
+    <li><strong>Account deletion:</strong> Deleting an account removes all associated personal data
+      from our production systems within 30 days.</li>
+    <li><strong>Requests by email:</strong> Users may also request access, correction, export, or
+      deletion of their data by contacting <a href="mailto:bbs7755@gmail.com">bbs7755@gmail.com</a>.</li>
+  </ul>
+
+  <h2>5. Storage and Security</h2>
+  <p>
+    Consumer data is stored in a managed PostgreSQL database (Supabase) protected by row-level
+    security, encrypted in transit using TLS 1.2 or higher, and encrypted at rest using AES-256.
+    Bank login credentials are entered directly within Plaid Link and are never stored on our systems.
+    Further detail is available in our Information Security Policy
+    (<a href="https://lilg1488.github.io/nota-legal/security.html">https://lilg1488.github.io/nota-legal/security.html</a>).
+  </p>
+
+  <h2>6. Review</h2>
+  <p>
+    This policy is reviewed and updated at least annually, or sooner when material changes occur to
+    the application, infrastructure, or applicable laws.
+  </p>
+
+  <div class="footer">
+    &copy; 2026 NOTA · Hlib Ladin · Calgary, Canada · Public version:
+    https://lilg1488.github.io/nota-legal/privacy.html (Section 9)
+  </div>
+</body>
+</html>

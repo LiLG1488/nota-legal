@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information Security Policy — NOTA</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    header {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+    header p  { font-size: 14px; color: #aaa; margin-top: 6px; }
+    main {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 0 24px 80px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 36px 0 10px;
+      color: #111;
+      border-left: 3px solid #4A6741;
+      padding-left: 12px;
+    }
+    p  { margin-bottom: 14px; font-size: 15px; color: #333; }
+    ul { margin: 0 0 14px 20px; }
+    li { font-size: 15px; color: #333; margin-bottom: 6px; }
+    a  { color: #4A6741; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      padding: 32px 24px;
+      border-top: 1px solid #e5e5e0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>NOTA — Information Security Policy</h1>
+  <p>Last updated: June 16, 2026</p>
+</header>
+
+<main>
+
+  <p>
+    This Information Security Policy describes the administrative, technical, and organizational
+    measures NOTA ("we", "us", or "our") uses to protect the confidentiality, integrity, and
+    availability of consumer data, including financial data accessed through Plaid. NOTA is
+    operated by <strong>Hlib Ladin</strong>, an individual developer based in Calgary, Alberta, Canada.
+  </p>
+
+  <h2>1. Governance and Risk Management</h2>
+  <ul>
+    <li>
+      <strong>Security owner:</strong> Hlib Ladin is the individual responsible for information
+      security and serves as the point of contact for all security and privacy matters
+      (<a href="mailto:bbs7755@gmail.com">bbs7755@gmail.com</a>).
+    </li>
+    <li>This policy is documented, operationalized, and reviewed at least annually, or sooner when
+      material changes occur to the application, infrastructure, or applicable regulations.</li>
+    <li>We follow a risk-based approach: data flows handling consumer financial data are identified,
+      and controls are applied to minimize the amount of data collected, stored, and retained
+      (data minimization).</li>
+  </ul>
+
+  <h2>2. Identity and Access Management</h2>
+  <ul>
+    <li><strong>Least privilege:</strong> Access to production systems and sensitive data is limited
+      to the security owner only, on a strict need-to-know basis.</li>
+    <li><strong>Row-Level Security (RLS):</strong> All consumer data is stored in a Supabase
+      (PostgreSQL) database protected by row-level security policies, so each end user can access
+      only their own records. Application requests are scoped to the authenticated user.</li>
+    <li><strong>Multi-factor authentication (MFA):</strong> MFA is enabled on all administrative
+      accounts that can access systems storing or processing consumer financial data, including
+      the cloud database provider, source-code repository, build platform, and email.</li>
+    <li><strong>Secrets management:</strong> API keys, service-role keys, and the Plaid client
+      secret are stored as protected environment variables / managed secrets and are never
+      committed to source control or shipped in the client application.</li>
+  </ul>
+
+  <h2>3. Infrastructure and Network Security</h2>
+  <ul>
+    <li><strong>Encryption in transit:</strong> All communication between clients, our backend, and
+      third-party services is encrypted using TLS 1.2 or higher.</li>
+    <li><strong>Encryption at rest:</strong> Consumer data, including data received from the Plaid
+      API, is encrypted at rest (AES-256) by our managed database provider (Supabase).</li>
+    <li><strong>Managed infrastructure:</strong> Our backend runs on Supabase managed
+      infrastructure, which provides network isolation, automated security patching, and
+      infrastructure-level monitoring.</li>
+    <li><strong>Credential handling:</strong> Bank login credentials are entered by the user
+      directly within Plaid Link and are never transmitted to or stored on our systems. We receive
+      only Plaid access tokens and the financial data required to operate the app.</li>
+  </ul>
+
+  <h2>4. Development and Vulnerability Management</h2>
+  <ul>
+    <li><strong>Dependency scanning:</strong> Third-party dependencies are monitored for known
+      vulnerabilities using automated tooling (e.g., Dependabot / npm audit), and vulnerable
+      packages are patched promptly.</li>
+    <li><strong>Patch management and SLA:</strong> Production infrastructure is automatically patched
+      by our managed provider; developer machines are kept up to date with operating-system and
+      application security updates. Identified vulnerabilities are remediated within a defined
+      service-level target: critical and high-severity issues within 7 days, and
+      medium/low-severity issues within 30 days, where a patch or mitigation is available.</li>
+    <li><strong>End-of-life (EOL) software:</strong> We actively monitor the runtime, framework, and
+      dependency versions in use (e.g., Expo SDK, libraries) and upgrade away from end-of-life or
+      unsupported versions to remain on supported, patched releases.</li>
+    <li><strong>Secure development:</strong> Secrets are excluded from source control, code changes
+      are reviewed before release, and least-privilege principles are applied to API access.</li>
+  </ul>
+
+  <h2>5. Data Protection and Privacy</h2>
+  <ul>
+    <li>We maintain a public Privacy Policy describing what data we collect, how it is used, and the
+      rights available to users:
+      <a href="https://lilg1488.github.io/nota-legal/privacy.html">privacy policy</a>.</li>
+    <li>We obtain consent from consumers for the collection, processing, and storage of their data,
+      including explicit consent before a bank account is connected through Plaid.</li>
+    <li>We maintain and enforce a data retention and deletion policy in compliance with applicable
+      privacy laws (PIPEDA, GDPR, CCPA). Users can delete their data at any time from within the
+      app, and disconnecting a bank removes the associated Plaid data.</li>
+    <li>We do not sell consumer data, and we do not use consumer financial data to train AI models.</li>
+  </ul>
+
+  <h2>6. Incident Response</h2>
+  <ul>
+    <li>Suspected security incidents are investigated promptly by the security owner.</li>
+    <li>In the event of a confirmed breach affecting consumer data, we will contain the issue,
+      assess impact, remediate, and notify affected users and relevant parties (including Plaid and
+      regulators where required) in accordance with applicable law.</li>
+    <li>As of the date above, NOTA has not experienced a data breach.</li>
+  </ul>
+
+  <h2>7. Contact</h2>
+  <p>
+    Questions about this Information Security Policy can be directed to:<br />
+    <strong>Hlib Ladin</strong><br />
+    Calgary, Alberta, Canada<br />
+    <a href="mailto:bbs7755@gmail.com">bbs7755@gmail.com</a>
+  </p>
+
+</main>
+
+<footer>
+  &copy; 2026 NOTA · Hlib Ladin · Calgary, Canada
+</footer>
+
+</body>
+</html>

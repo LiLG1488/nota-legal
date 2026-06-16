@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    @page { margin: 48px 56px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a; line-height: 1.6; font-size: 13px;
+    }
+    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 4px; }
+    .sub { font-size: 12px; color: #666; margin-bottom: 24px; }
+    h2 {
+      font-size: 15px; font-weight: 700; margin: 22px 0 8px; color: #111;
+      border-left: 3px solid #4A6741; padding-left: 10px;
+    }
+    p { margin-bottom: 10px; color: #333; }
+    ul { margin: 0 0 10px 20px; }
+    li { margin-bottom: 5px; color: #333; }
+    a { color: #4A6741; text-decoration: none; }
+    .footer { margin-top: 28px; font-size: 11px; color: #888; border-top: 1px solid #e5e5e0; padding-top: 12px; }
+  </style>
+</head>
+<body>
+  <h1>NOTA — Access Control Policy</h1>
+  <div class="sub">Last updated: June 16, 2026 · Owner: Hlib Ladin · Calgary, Alberta, Canada · bbs7755@gmail.com</div>
+
+  <h2>1. Purpose and Scope</h2>
+  <p>
+    This Access Control Policy defines how NOTA ("we", "us", or "our") controls and limits access to
+    production assets and sensitive consumer data, including financial data accessed through Plaid.
+    It applies to all systems that store, process, or transmit consumer data, and to all individuals
+    with access to those systems. NOTA is operated by Hlib Ladin, an individual developer based in
+    Calgary, Alberta, Canada.
+  </p>
+
+  <h2>2. Principle of Least Privilege</h2>
+  <ul>
+    <li>Access to production systems and sensitive data is granted strictly on a need-to-know basis.</li>
+    <li>Access is currently limited to the security owner (Hlib Ladin), who is the sole operator of
+      the application and its infrastructure.</li>
+    <li>No third party is granted standing access to production consumer data.</li>
+  </ul>
+
+  <h2>3. Role-Based Access Control (RBAC)</h2>
+  <ul>
+    <li><strong>End-user data isolation:</strong> Consumer data is stored in a Supabase (PostgreSQL)
+      database with row-level security (RLS) policies, ensuring each authenticated end user can
+      access only their own records.</li>
+    <li><strong>Service roles:</strong> Backend operations use scoped service roles with the minimum
+      permissions required. Privileged keys (e.g., service-role keys, Plaid client secret) are
+      restricted to server-side environments.</li>
+  </ul>
+
+  <h2>4. Authentication</h2>
+  <ul>
+    <li><strong>Administrative access:</strong> All administrative accounts that can access systems
+      storing or processing consumer financial data (cloud database provider, source-code
+      repository, build platform, email) are protected with multi-factor authentication (MFA).</li>
+    <li><strong>Non-human authentication:</strong> Service-to-service and API access is authenticated
+      using OAuth tokens and TLS certificates. Credentials are stored as managed secrets / protected
+      environment variables and are never committed to source control or shipped in the client app.</li>
+    <li><strong>End-user authentication:</strong> End users authenticate through Supabase Auth
+      (email/password or Google OAuth). Bank credentials are entered directly within Plaid Link and
+      are never received or stored by us.</li>
+  </ul>
+
+  <h2>5. Access Provisioning and Review</h2>
+  <ul>
+    <li>Access is provisioned only when required to operate or maintain the service.</li>
+    <li>Access rights are reviewed at least annually, and immediately upon any change in personnel or
+      third-party relationships, with unnecessary access revoked promptly.</li>
+    <li>Should additional personnel be onboarded in the future, access will be granted per role and
+      revoked upon role change or departure.</li>
+  </ul>
+
+  <h2>6. Monitoring and Enforcement</h2>
+  <p>
+    Access to managed infrastructure is logged by our providers. Suspected unauthorized access is
+    investigated promptly by the security owner. This policy is reviewed at least annually and is
+    enforced as part of NOTA's overall Information Security Policy
+    (<a href="https://lilg1488.github.io/nota-legal/security.html">https://lilg1488.github.io/nota-legal/security.html</a>).
+  </p>
+
+  <div class="footer">&copy; 2026 NOTA · Hlib Ladin · Calgary, Canada</div>
+</body>
+</html>
